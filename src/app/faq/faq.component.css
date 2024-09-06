@@ -1,0 +1,9 @@
+.active{
+    border-bottom: none;
+}
+.activeArrow path{
+    stroke: hsl(0, 94%, 66%); 
+}
+.activeArrow{
+    transform: rotate(180deg);
+}

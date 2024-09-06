@@ -1,0 +1,20 @@
+<section class="flex justify-center py-28 ">
+    <div class="w-11/12 sm:w-[490px]">
+        <h2 class="text-3xl my-6 text-center">Frequently Asked Questions</h2>
+        <p class="text-grayishBlue text-center pb-10 border-b border-gray-300">Here are some of our FAQs. If you have any other questions you’d like 
+            answered please feel free to email us. </p>
+        <div *ngFor="let question of questions; let i = index">
+            <!-- Question 1 -->
+            <div role="button" tabindex="0" aria-labelledby="question1" [ngClass]="{ 'active': question.clicked }" class="flex justify-between items-center py-3 px-2 border-b border-gray-300 hover:text-softRed transition duration-300 " (click)="onQuestionClick(i)" (keydown.enter)="onQuestionClick(i)">
+                <h4 id="question1">{{question.question}}</h4>
+                <svg [ngClass]="{ 'activeArrow': question.clicked }" class="transition duration-500" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+            </div>
+            <!-- Answer 1 -->
+            <p *ngIf="question.clicked" class="pt-8 pb-4 text-grayishBlue">
+                {{question.answer}}
+            </p>
+        </div>
+        <button  class="mx-auto block bg-softBlue px-4 py-2 rounded text-white mt-12 hover:bg-white hover:text-softBlue hover:border-softBlue border-transparent border-2 transition duration-300">More Info</button>
+    </div>
+</section>
+

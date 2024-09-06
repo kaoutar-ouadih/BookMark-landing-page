@@ -1,0 +1,14 @@
+<section class="bg-softBlue py-16 flex justify-center text-white">
+    <div class="w-11/12 sm:w-[450px]">
+        <h5 class="tracking-[0.4rem] text-sm text-center">35,000+ already joined</h5>
+        <h2 class="text-3xl my-8 text-center">Stay up-to-date with what we’re doing</h2>
+        <form class="flex flex-col sm:flex-row gap-4" (ngSubmit)="onContactFormSubmit(contactForm)" #contactForm="ngForm">
+            <div class="rounded relative grow" [ngClass]="{'error': emailInput.invalid && (emailInput.touched || emailInput.dirty)}">
+                <input type="email" id="email" name="email" [(ngModel)]="email"  #emailInput="ngModel" pattern="^([a-z\d\.\-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$" required class="w-full py-3 px-4 rounded text-sm text-grayishBlue" placeholder="Enter your email address">
+                <p *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)" class="px-3 py-2 text-white text-sm">Whoops, make sure it's an email</p>
+                <svg *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)" class="absolute top-3 right-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd"><circle cx="10" cy="10" r="10" fill="#FA5959"/><g fill="#FFF" transform="translate(9 5)"><rect width="2" height="7" rx="1"/><rect width="2" height="2" y="8" rx="1"/></g></g></svg>
+            </div>
+            <button type="submit" class="text-sm bg-softRed rounded py-3 px-4 hover:bg-white hover:text-softRed hover:border-softRed  border-transparent border-2 transition duration-300 h-fit">Contact Us</button>
+        </form>
+    </div>
+</section>
