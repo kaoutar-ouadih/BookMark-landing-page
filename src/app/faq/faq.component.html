@@ -5,8 +5,8 @@
             answered please feel free to email us. </p>
         <div *ngFor="let question of questions; let i = index">
             <!-- Question 1 -->
-            <div role="button" tabindex="0" aria-labelledby="question1" [ngClass]="{ 'active': question.clicked }" class="flex justify-between items-center py-3 px-2 border-b border-gray-300 hover:text-softRed transition duration-300 " (click)="onQuestionClick(i)" (keydown.enter)="onQuestionClick(i)">
-                <h4 id="question1">{{question.question}}</h4>
+            <div role="button" tabindex="0" aria-labelledby=`question${index}` [ngClass]="{ 'active': question.clicked }" class="flex justify-between items-center py-3 px-2 border-b border-gray-300 hover:text-softRed transition duration-300 " (click)="onQuestionClick(i)" (keydown.enter)="onQuestionClick(i)">
+                <h4 id=`question${index}`>{{question.question}}</h4>
                 <svg [ngClass]="{ 'activeArrow': question.clicked }" class="transition duration-500" xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
             </div>
             <!-- Answer 1 -->
